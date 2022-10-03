@@ -3,14 +3,16 @@ server:
 
 spring:
   application:
-    name: eureka-server-8761  # 应用名称
+    name: eureka-server  # 应用名称
 eureka:
   server:
     eviction-interval-timer-in-ms: 10000  # 服务端间隔多少毫秒做定期删除的操作
     renewal-percent-threshold: 0.85 # 续约百分比 超过85%的应用没有和你续约 那么eureka会保护服务不会剔除任何一个
   instance:
     instance-id: ${eureka.instance.hostname}:${spring.application.name}:${server.port} #主机名称：应用名称：端口
-    hostname: loclhost  #主机名称 或者服务器ip
+    hostname: eureka7001.com  #主机名称 或者服务器ip
     prefer-ip-address: true # 以ip的形式显示具体的服务的信息
     lease-renewal-interval-in-seconds: 5  #服务实例的续约时间间隔
-
+  client:
+    service-url:
+      defaultZone: http://eureka7002.com:8762/eureka,http://eureka7003.com:8763/eureka
