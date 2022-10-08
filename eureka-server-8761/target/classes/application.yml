@@ -15,4 +15,6 @@ eureka:
     lease-renewal-interval-in-seconds: 5  #服务实例的续约时间间隔
   client:
     service-url:
-      defaultZone: http://eureka7002.com:8762/eureka,http://eureka7003.com:8763/eureka
+      defaultZone: {EUREKA_SERVER_URL:http://localhost:8761/eureka}
+    register-with-eureka: false
+    fetch-registry: true
