@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: provider
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://39.108.179.145:8761/eureka
+  instance:
+    instance-id: ${eureka.instance.hostname}:${spring.application.name}:${server.port} #主机名称：应用名称：端口
+    hostname: loclhost  #主机名称 或者服务器ip
+    prefer-ip-address: true # 以ip的形式显示具体的服务的信息
+    lease-renewal-interval-in-seconds: 10  #服务实例的续约时间间隔
+
