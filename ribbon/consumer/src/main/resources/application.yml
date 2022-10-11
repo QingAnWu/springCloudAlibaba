@@ -14,4 +14,7 @@ eureka:
     prefer-ip-address: true # 以ip的形式显示具体的服务的信息
     lease-renewal-interval-in-seconds: 10  #服务实例的续约时间间隔
 
-
+## 访问不同的服务可以使用不同的算法规则
+#provider: # 先写服务提供者的应用名称
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #几种算法的权限的类名
