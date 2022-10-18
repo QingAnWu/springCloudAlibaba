@@ -11,3 +11,19 @@ spring:
       discovery:
         namespace: dc2814ff-98c9-4229-abfc-48109c9748cd
         group: A_GROUP
+        cluster-name: HZ
+
+nacos-client:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule # 负载均衡规则
+
+feign:
+  client:
+    config:
+      default: #此处写的是服务名称，针对我们feign微服务的配置，如果是default就是全局配置
+        loggerLevel: full #配置Feign的日志级别，相当于代码配置方式中的Logger
+
+#在application.yml中使用 logging.level.<Feign客户端对应的接口的全限定名> 的参数配置格式来开启指定客户端日志
+logging:
+  level:
+    com.qingan.feign: debug #我需要打印这个接口下命的日志

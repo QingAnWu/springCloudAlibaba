@@ -11,6 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
+//@RibbonClient(name = "nacos-client",configuration = RandomRule.class)
 public class NacosClientAApplication {
 
     public static void main(String[] args) {

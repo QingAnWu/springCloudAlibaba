@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: nacos-client # 服务名称,注：要与文件名一致
+  profiles:
+    active: dev #开发环境，这里是dev
+  cloud:
+    nacos:
+      server-addr: localhost:8848 # Nacos地址
+      config:
+        file-extension: yaml # 文件后缀名
+        server-addr: localhost:8848
+        namespace: dc2814ff-98c9-4229-abfc-48109c9748cd
+      discovery: #这里是和注册相关的配置
+        server-addr: localhost:8848 # Nacos地址
+        namespace: dc2814ff-98c9-4229-abfc-48109c9748cd
+        group: A_GROUP #往哪个组注册
+        cluster-name: HZ  #配置集群名字

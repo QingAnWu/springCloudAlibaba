@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @author qingAn
  * @date 2022/10/06 23:30
  */
-@FeignClient(value = "nacos-client")
+@FeignClient(value = "nacosclient")
 public interface TestFeign {
     @GetMapping("/info")
     String hello();
