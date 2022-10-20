@@ -1,0 +1,24 @@
+server:
+  port: 80
+spring:
+  application:
+    name: getway-login-service
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+    gateway:
+      enabled: true
+      routes:
+        - id: login-service-route #这是个路由的id 保存唯一即可
+          uri: lb://login
+          predicates: # 路由断言，也就是判断请求是否符合路由规则的条件，结果通常是真或假
+            - Path=/doLogin/** # 这个是按照路径匹配，只要以/user/开头就符合要求
+#            - Query=name,domin.
+          filters:
+            - AddRequestHeader=qingan, hello world!
+      discovery:
+        locator:
+          enabled: true #开启动动态路由 开启通用应用名称 找到服务的功能
+          lower-case-service-id: true #开启服务名称小写
+
+

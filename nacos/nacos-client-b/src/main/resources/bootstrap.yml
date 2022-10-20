@@ -15,3 +15,6 @@ spring:
         namespace: dc2814ff-98c9-4229-abfc-48109c9748cd
         group: A_GROUP #往哪个组注册
         cluster-name: HZ  #配置集群名字
+
+
+

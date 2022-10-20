@@ -12,6 +12,14 @@ spring:
         namespace: dc2814ff-98c9-4229-abfc-48109c9748cd
         group: A_GROUP
         cluster-name: HZ
+#  zipkin:
+#    base-url: http://39.108.179.145:9411/
+#    sender:
+#      type: web
+#    sleuth:
+#      sampler:
+#        probability: 1  # 1是百分百。一般生产环境配个0.1
+#        rate: 10 #为了使用速率限制采集器，选择每秒间隔接受的trace的量， 最小数字为0，最大值为2，147，483，647
 
 nacos-client:
   ribbon:
